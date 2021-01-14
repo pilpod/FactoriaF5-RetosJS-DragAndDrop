@@ -1,27 +1,45 @@
 * {
   box-sizing: border-box;
+  margin: 0;
 }
 
 body {
+  background-color: #256d7b;
 
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: 300px 0;
 }
 
 .empty {
-
+  width: 150px;
+  height: 150px;
+  margin: 15px;
+  border: 3px solid black;
+  background-color: white;
 }
 
 .fill {
-
-  width: 150px;
-
+  width: 100%;
+  height: 100%;
+  cursor: grab;
+  background-image: url('/img/he-man.jpg');
 }
 
 .hold {
-  border: ;
+  border: 3px solid green
 }
 
 .hovered {
-  : dashed;
+  background-color: #f4f4f4;
+  border: 3px dashed grey;
 }
 
 @media (max-width: 800px) {
