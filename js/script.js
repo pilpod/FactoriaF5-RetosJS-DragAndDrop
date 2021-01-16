@@ -12,9 +12,10 @@ for(const empty of empties) {
     empty.addEventListener('drop', dragDrop);
 }
 
-function dragStart() {
+function dragStart(e) {
     this.className += ' hold';
     setTimeout(() => (this.className = 'invisible'), 0);
+    e.dataTransfer.setData('text', e.target.id);
 }
 
 function dragEnd() {
@@ -23,7 +24,8 @@ function dragEnd() {
 
 function dragOver(e) {
     e.preventDefault();
-    console.log('dragover');
+    this.style.backgroundColor = '#ff55cc';
+    this.style.border = '3px dashed white';
 }
 
 function dragEnter(e) {
@@ -33,10 +35,19 @@ function dragEnter(e) {
 
 function dragLeave(e) {
     console.log('dragleave');
+    this.style.backgroundColor = '#ffffff';
+    this.style.border = '3px solid black';
 
 }
 
 function dragDrop(e) {
     console.log('dragdrop');
+    e.preventDefault();
+    this.style.backgroundColor = '#ffffff';
+    this.style.border = '3px solid black';
+    let data = e.dataTransfer.getData('text');
+    console.log(data);
+    e.target.appendChild(document.getElementById(data));
 
+    
 }
