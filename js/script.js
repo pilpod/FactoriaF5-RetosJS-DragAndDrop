@@ -30,11 +30,13 @@ function dragOver(e) {
 
 function dragEnter(e) {
     console.log('dragenter');
+    e.preventDefault();
 
 }
 
 function dragLeave(e) {
     console.log('dragleave');
+    e.preventDefault();
     this.style.backgroundColor = '#ffffff';
     this.style.border = '3px solid black';
 
